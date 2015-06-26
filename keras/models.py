@@ -14,7 +14,8 @@ from six.moves import range
 
 def standardize_y(y):
     if not hasattr(y, 'shape'):
-        y = np.asarray(y)
+        y = np.asarray(y[:len(y)]) 
+        #y = np.asarray(y)
     if len(y.shape) == 1:
         y = np.reshape(y, (len(y), 1))
     return y
